@@ -22,13 +22,12 @@ Partial Class MainProject
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainProject))
         Me.CW_Button = New System.Windows.Forms.Button()
         Me.CW_TextBox = New System.Windows.Forms.TextBox()
         Me.CM_CheckBox = New System.Windows.Forms.CheckBox()
         Me.PW_TextBox = New System.Windows.Forms.TextBox()
         Me.PW_Button = New System.Windows.Forms.Button()
-        Me.InfoText1 = New System.Windows.Forms.Label()
-        Me.VerText = New System.Windows.Forms.Label()
         Me.CM_ComboBox = New System.Windows.Forms.ComboBox()
         Me.fbd_path = New System.Windows.Forms.FolderBrowserDialog()
         Me.SaveButton = New System.Windows.Forms.Button()
@@ -42,6 +41,10 @@ Partial Class MainProject
         Me.GITPathTextBox = New System.Windows.Forms.TextBox()
         Me.GITPathButton = New System.Windows.Forms.Button()
         Me.ofd_path = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.VerText = New System.Windows.Forms.Label()
+        Me.InfoText1 = New System.Windows.Forms.Label()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CW_Button
@@ -93,26 +96,6 @@ Partial Class MainProject
         Me.PW_Button.Text = "Select Path"
         Me.PW_Button.UseVisualStyleBackColor = True
         '
-        'InfoText1
-        '
-        Me.InfoText1.AutoSize = True
-        Me.InfoText1.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InfoText1.Location = New System.Drawing.Point(432, 274)
-        Me.InfoText1.Name = "InfoText1"
-        Me.InfoText1.Size = New System.Drawing.Size(201, 20)
-        Me.InfoText1.TabIndex = 6
-        Me.InfoText1.Text = "By MineEric64 (최에릭) - Git"
-        '
-        'VerText
-        '
-        Me.VerText.AutoSize = True
-        Me.VerText.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.VerText.Location = New System.Drawing.Point(491, 297)
-        Me.VerText.Name = "VerText"
-        Me.VerText.Size = New System.Drawing.Size(142, 24)
-        Me.VerText.TabIndex = 7
-        Me.VerText.Text = "Version. 1.0.0.0"
-        '
         'CM_ComboBox
         '
         Me.CM_ComboBox.Enabled = False
@@ -157,9 +140,9 @@ Partial Class MainProject
         'GazuaButton
         '
         Me.GazuaButton.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GazuaButton.Location = New System.Drawing.Point(460, 193)
+        Me.GazuaButton.Location = New System.Drawing.Point(474, 98)
         Me.GazuaButton.Name = "GazuaButton"
-        Me.GazuaButton.Size = New System.Drawing.Size(173, 64)
+        Me.GazuaButton.Size = New System.Drawing.Size(159, 64)
         Me.GazuaButton.TabIndex = 12
         Me.GazuaButton.Text = "Ctrl + C/V"
         Me.GazuaButton.UseVisualStyleBackColor = True
@@ -178,7 +161,7 @@ Partial Class MainProject
         'CLogButton
         '
         Me.CLogButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CLogButton.Location = New System.Drawing.Point(507, 105)
+        Me.CLogButton.Location = New System.Drawing.Point(507, 10)
         Me.CLogButton.Name = "CLogButton"
         Me.CLogButton.Size = New System.Drawing.Size(126, 27)
         Me.CLogButton.TabIndex = 14
@@ -189,7 +172,7 @@ Partial Class MainProject
         '
         Me.EDITCModeButton.Enabled = False
         Me.EDITCModeButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EDITCModeButton.Location = New System.Drawing.Point(507, 138)
+        Me.EDITCModeButton.Location = New System.Drawing.Point(507, 45)
         Me.EDITCModeButton.Name = "EDITCModeButton"
         Me.EDITCModeButton.Size = New System.Drawing.Size(126, 47)
         Me.EDITCModeButton.TabIndex = 15
@@ -232,11 +215,44 @@ Partial Class MainProject
         '
         Me.ofd_path.Filter = "Executable File|*.exe"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.CPWorkspace.My.Resources.Resources.CPWorkspace
+        Me.PictureBox1.Location = New System.Drawing.Point(474, 168)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(159, 150)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 19
+        Me.PictureBox1.TabStop = False
+        '
+        'VerText
+        '
+        Me.VerText.AutoSize = True
+        Me.VerText.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.VerText.Location = New System.Drawing.Point(471, 294)
+        Me.VerText.Name = "VerText"
+        Me.VerText.Size = New System.Drawing.Size(162, 24)
+        Me.VerText.TabIndex = 21
+        Me.VerText.Text = "     Version. 1.0.0.0"
+        '
+        'InfoText1
+        '
+        Me.InfoText1.AutoSize = True
+        Me.InfoText1.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InfoText1.Location = New System.Drawing.Point(432, 274)
+        Me.InfoText1.Name = "InfoText1"
+        Me.InfoText1.Size = New System.Drawing.Size(201, 20)
+        Me.InfoText1.TabIndex = 20
+        Me.InfoText1.Text = "By MineEric64 (최에릭) - Git"
+        '
         'MainProject
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(645, 330)
+        Me.Controls.Add(Me.VerText)
+        Me.Controls.Add(Me.InfoText1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GITPathTextBox)
         Me.Controls.Add(Me.GITPathButton)
         Me.Controls.Add(Me.OpenGITCheckBox)
@@ -248,15 +264,15 @@ Partial Class MainProject
         Me.Controls.Add(Me.CW_Info)
         Me.Controls.Add(Me.SaveButton)
         Me.Controls.Add(Me.CM_ComboBox)
-        Me.Controls.Add(Me.VerText)
-        Me.Controls.Add(Me.InfoText1)
         Me.Controls.Add(Me.PW_TextBox)
         Me.Controls.Add(Me.PW_Button)
         Me.Controls.Add(Me.CM_CheckBox)
         Me.Controls.Add(Me.CW_TextBox)
         Me.Controls.Add(Me.CW_Button)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainProject"
         Me.Text = "Copy/Paste Workspace for Git"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -267,8 +283,6 @@ Partial Class MainProject
     Friend WithEvents CM_CheckBox As CheckBox
     Friend WithEvents PW_TextBox As TextBox
     Friend WithEvents PW_Button As Button
-    Friend WithEvents InfoText1 As Label
-    Friend WithEvents VerText As Label
     Friend WithEvents CM_ComboBox As ComboBox
     Friend WithEvents fbd_path As FolderBrowserDialog
     Friend WithEvents SaveButton As Button
@@ -282,4 +296,7 @@ Partial Class MainProject
     Friend WithEvents GITPathTextBox As TextBox
     Friend WithEvents GITPathButton As Button
     Friend WithEvents ofd_path As OpenFileDialog
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents VerText As Label
+    Friend WithEvents InfoText1 As Label
 End Class

@@ -22,6 +22,7 @@ Partial Class CommitLog
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CommitLog))
         Me.CLogPathTextBox = New System.Windows.Forms.TextBox()
         Me.CLogPathButton = New System.Windows.Forms.Button()
         Me.CLogText = New System.Windows.Forms.TextBox()
@@ -137,6 +138,7 @@ Partial Class CommitLog
         Me.Controls.Add(Me.CLogText)
         Me.Controls.Add(Me.CLogPathButton)
         Me.Controls.Add(Me.CLogPathTextBox)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CommitLog"
         Me.Text = "CPWorkspace - Commit Log"
         Me.ResumeLayout(False)

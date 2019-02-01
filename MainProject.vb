@@ -62,7 +62,7 @@ Public Class MainProject
         GITTrue = False
 
         '-Load Settings
-        VerText.Text = "Version. " + My.Application.Info.Version.ToString
+        VerText.Text = "     Version. " + My.Application.Info.Version.ToString
 
         If Not Rini("CWPath") = "Default" Then 'Reading "To Copy Folder" Path
             CW_TextBox.Text = Rini("CWPath")
