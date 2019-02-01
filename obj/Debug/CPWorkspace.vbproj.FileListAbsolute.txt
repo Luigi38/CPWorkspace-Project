@@ -10,3 +10,4 @@ C:\Users\SAMSUNG\documents\visual studio 2017\Projects\UniConverter Project\CPWo
 C:\Users\SAMSUNG\documents\visual studio 2017\Projects\UniConverter Project\CPWorkspace\obj\Debug\CPWorkspace.exe
 C:\Users\SAMSUNG\documents\visual studio 2017\Projects\UniConverter Project\CPWorkspace\obj\Debug\CPWorkspace.xml
 C:\Users\SAMSUNG\documents\visual studio 2017\Projects\UniConverter Project\CPWorkspace\obj\Debug\CPWorkspace.pdb
+C:\Users\SAMSUNG\documents\visual studio 2017\Projects\UniConverter Project\CPWorkspace\obj\Debug\CPWorkspace.CommitLog.resources

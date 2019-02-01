@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommitLog.Designer.vb">
+      <DependentUpon>CommitLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CommitLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainProject.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CommitLog.resx">
+      <DependentUpon>CommitLog.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainProject.resx">
       <DependentUpon>MainProject.vb</DependentUpon>
     </EmbeddedResource>

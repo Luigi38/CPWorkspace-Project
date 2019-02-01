@@ -25,16 +25,28 @@ Partial Class MainProject
         Me.CW_Button = New System.Windows.Forms.Button()
         Me.CW_TextBox = New System.Windows.Forms.TextBox()
         Me.CM_CheckBox = New System.Windows.Forms.CheckBox()
-        Me.VCW_TextBox = New System.Windows.Forms.TextBox()
-        Me.VCW_Button = New System.Windows.Forms.Button()
+        Me.PW_TextBox = New System.Windows.Forms.TextBox()
+        Me.PW_Button = New System.Windows.Forms.Button()
         Me.InfoText1 = New System.Windows.Forms.Label()
         Me.VerText = New System.Windows.Forms.Label()
         Me.CM_ComboBox = New System.Windows.Forms.ComboBox()
         Me.fbd_path = New System.Windows.Forms.FolderBrowserDialog()
+        Me.SaveButton = New System.Windows.Forms.Button()
+        Me.CW_Info = New System.Windows.Forms.Label()
+        Me.VCW_Info = New System.Windows.Forms.Label()
+        Me.GazuaButton = New System.Windows.Forms.Button()
+        Me.GazuaTCheckBox = New System.Windows.Forms.CheckBox()
+        Me.CLogButton = New System.Windows.Forms.Button()
+        Me.EDITCModeButton = New System.Windows.Forms.Button()
+        Me.OpenGITCheckBox = New System.Windows.Forms.CheckBox()
+        Me.GITPathTextBox = New System.Windows.Forms.TextBox()
+        Me.GITPathButton = New System.Windows.Forms.Button()
+        Me.ofd_path = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
         'CW_Button
         '
+        Me.CW_Button.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CW_Button.Location = New System.Drawing.Point(341, 33)
         Me.CW_Button.Name = "CW_Button"
         Me.CW_Button.Size = New System.Drawing.Size(103, 26)
@@ -55,30 +67,31 @@ Partial Class MainProject
         '
         Me.CM_CheckBox.AutoSize = True
         Me.CM_CheckBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CM_CheckBox.Location = New System.Drawing.Point(39, 178)
+        Me.CM_CheckBox.Location = New System.Drawing.Point(39, 193)
         Me.CM_CheckBox.Name = "CM_CheckBox"
         Me.CM_CheckBox.Size = New System.Drawing.Size(156, 21)
         Me.CM_CheckBox.TabIndex = 3
         Me.CM_CheckBox.Text = "Enable Custom Mode"
         Me.CM_CheckBox.UseVisualStyleBackColor = True
         '
-        'VCW_TextBox
+        'PW_TextBox
         '
-        Me.VCW_TextBox.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.VCW_TextBox.Location = New System.Drawing.Point(39, 76)
-        Me.VCW_TextBox.Name = "VCW_TextBox"
-        Me.VCW_TextBox.Size = New System.Drawing.Size(284, 26)
-        Me.VCW_TextBox.TabIndex = 5
-        Me.VCW_TextBox.Text = "VCWorkspace"
+        Me.PW_TextBox.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PW_TextBox.Location = New System.Drawing.Point(39, 89)
+        Me.PW_TextBox.Name = "PW_TextBox"
+        Me.PW_TextBox.Size = New System.Drawing.Size(284, 26)
+        Me.PW_TextBox.TabIndex = 5
+        Me.PW_TextBox.Text = "VCWorkspace"
         '
-        'VCW_Button
+        'PW_Button
         '
-        Me.VCW_Button.Location = New System.Drawing.Point(341, 76)
-        Me.VCW_Button.Name = "VCW_Button"
-        Me.VCW_Button.Size = New System.Drawing.Size(103, 26)
-        Me.VCW_Button.TabIndex = 4
-        Me.VCW_Button.Text = "Select Path"
-        Me.VCW_Button.UseVisualStyleBackColor = True
+        Me.PW_Button.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PW_Button.Location = New System.Drawing.Point(341, 89)
+        Me.PW_Button.Name = "PW_Button"
+        Me.PW_Button.Size = New System.Drawing.Size(103, 26)
+        Me.PW_Button.TabIndex = 4
+        Me.PW_Button.Text = "Select Path"
+        Me.PW_Button.UseVisualStyleBackColor = True
         '
         'InfoText1
         '
@@ -105,26 +118,140 @@ Partial Class MainProject
         Me.CM_ComboBox.Enabled = False
         Me.CM_ComboBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CM_ComboBox.FormattingEnabled = True
-        Me.CM_ComboBox.Location = New System.Drawing.Point(39, 147)
+        Me.CM_ComboBox.Location = New System.Drawing.Point(39, 162)
         Me.CM_ComboBox.Name = "CM_ComboBox"
         Me.CM_ComboBox.Size = New System.Drawing.Size(184, 25)
         Me.CM_ComboBox.TabIndex = 8
         Me.CM_ComboBox.Text = "CustomMode_Item"
         '
-        'fbd_path
+        'SaveButton
         '
-        Me.fbd_path.RootFolder = System.Environment.SpecialFolder.MyDocuments
+        Me.SaveButton.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SaveButton.Location = New System.Drawing.Point(248, 135)
+        Me.SaveButton.Name = "SaveButton"
+        Me.SaveButton.Size = New System.Drawing.Size(116, 67)
+        Me.SaveButton.TabIndex = 9
+        Me.SaveButton.Text = "Save SETTINGS!"
+        Me.SaveButton.UseVisualStyleBackColor = True
+        '
+        'CW_Info
+        '
+        Me.CW_Info.AutoSize = True
+        Me.CW_Info.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CW_Info.Location = New System.Drawing.Point(46, 13)
+        Me.CW_Info.Name = "CW_Info"
+        Me.CW_Info.Size = New System.Drawing.Size(221, 17)
+        Me.CW_Info.TabIndex = 10
+        Me.CW_Info.Text = "To Copy Folder (ex: Project/Ctrl_C)"
+        '
+        'VCW_Info
+        '
+        Me.VCW_Info.AutoSize = True
+        Me.VCW_Info.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.VCW_Info.Location = New System.Drawing.Point(46, 69)
+        Me.VCW_Info.Name = "VCW_Info"
+        Me.VCW_Info.Size = New System.Drawing.Size(224, 17)
+        Me.VCW_Info.TabIndex = 11
+        Me.VCW_Info.Text = "To Paste Folder (ex: Project/Ctrl_V)"
+        '
+        'GazuaButton
+        '
+        Me.GazuaButton.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GazuaButton.Location = New System.Drawing.Point(460, 193)
+        Me.GazuaButton.Name = "GazuaButton"
+        Me.GazuaButton.Size = New System.Drawing.Size(173, 64)
+        Me.GazuaButton.TabIndex = 12
+        Me.GazuaButton.Text = "Ctrl + C/V"
+        Me.GazuaButton.UseVisualStyleBackColor = True
+        '
+        'GazuaTCheckBox
+        '
+        Me.GazuaTCheckBox.AutoSize = True
+        Me.GazuaTCheckBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GazuaTCheckBox.Location = New System.Drawing.Point(12, 297)
+        Me.GazuaTCheckBox.Name = "GazuaTCheckBox"
+        Me.GazuaTCheckBox.Size = New System.Drawing.Size(183, 21)
+        Me.GazuaTCheckBox.TabIndex = 13
+        Me.GazuaTCheckBox.Text = "Save Settings + Ctrl + C/V"
+        Me.GazuaTCheckBox.UseVisualStyleBackColor = True
+        '
+        'CLogButton
+        '
+        Me.CLogButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CLogButton.Location = New System.Drawing.Point(507, 105)
+        Me.CLogButton.Name = "CLogButton"
+        Me.CLogButton.Size = New System.Drawing.Size(126, 27)
+        Me.CLogButton.TabIndex = 14
+        Me.CLogButton.Text = "Commit Log"
+        Me.CLogButton.UseVisualStyleBackColor = True
+        '
+        'EDITCModeButton
+        '
+        Me.EDITCModeButton.Enabled = False
+        Me.EDITCModeButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EDITCModeButton.Location = New System.Drawing.Point(507, 138)
+        Me.EDITCModeButton.Name = "EDITCModeButton"
+        Me.EDITCModeButton.Size = New System.Drawing.Size(126, 47)
+        Me.EDITCModeButton.TabIndex = 15
+        Me.EDITCModeButton.Text = "Edit Custom Mode"
+        Me.EDITCModeButton.UseVisualStyleBackColor = True
+        '
+        'OpenGITCheckBox
+        '
+        Me.OpenGITCheckBox.AutoSize = True
+        Me.OpenGITCheckBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OpenGITCheckBox.Location = New System.Drawing.Point(12, 270)
+        Me.OpenGITCheckBox.Name = "OpenGITCheckBox"
+        Me.OpenGITCheckBox.Size = New System.Drawing.Size(191, 21)
+        Me.OpenGITCheckBox.TabIndex = 16
+        Me.OpenGITCheckBox.Text = "Open GIT After ""Ctrl + C/V"""
+        Me.OpenGITCheckBox.UseVisualStyleBackColor = True
+        '
+        'GITPathTextBox
+        '
+        Me.GITPathTextBox.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GITPathTextBox.Location = New System.Drawing.Point(12, 238)
+        Me.GITPathTextBox.Name = "GITPathTextBox"
+        Me.GITPathTextBox.Size = New System.Drawing.Size(284, 26)
+        Me.GITPathTextBox.TabIndex = 18
+        Me.GITPathTextBox.Text = "OpenGIT_Path"
+        Me.GITPathTextBox.Visible = False
+        '
+        'GITPathButton
+        '
+        Me.GITPathButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GITPathButton.Location = New System.Drawing.Point(209, 266)
+        Me.GITPathButton.Name = "GITPathButton"
+        Me.GITPathButton.Size = New System.Drawing.Size(103, 26)
+        Me.GITPathButton.TabIndex = 17
+        Me.GITPathButton.Text = "Select Path"
+        Me.GITPathButton.UseVisualStyleBackColor = True
+        Me.GITPathButton.Visible = False
+        '
+        'ofd_path
+        '
+        Me.ofd_path.Filter = "Executable File|*.exe"
         '
         'MainProject
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(645, 330)
+        Me.Controls.Add(Me.GITPathTextBox)
+        Me.Controls.Add(Me.GITPathButton)
+        Me.Controls.Add(Me.OpenGITCheckBox)
+        Me.Controls.Add(Me.EDITCModeButton)
+        Me.Controls.Add(Me.CLogButton)
+        Me.Controls.Add(Me.GazuaTCheckBox)
+        Me.Controls.Add(Me.GazuaButton)
+        Me.Controls.Add(Me.VCW_Info)
+        Me.Controls.Add(Me.CW_Info)
+        Me.Controls.Add(Me.SaveButton)
         Me.Controls.Add(Me.CM_ComboBox)
         Me.Controls.Add(Me.VerText)
         Me.Controls.Add(Me.InfoText1)
-        Me.Controls.Add(Me.VCW_TextBox)
-        Me.Controls.Add(Me.VCW_Button)
+        Me.Controls.Add(Me.PW_TextBox)
+        Me.Controls.Add(Me.PW_Button)
         Me.Controls.Add(Me.CM_CheckBox)
         Me.Controls.Add(Me.CW_TextBox)
         Me.Controls.Add(Me.CW_Button)
@@ -138,10 +265,21 @@ Partial Class MainProject
     Friend WithEvents CW_Button As Button
     Friend WithEvents CW_TextBox As TextBox
     Friend WithEvents CM_CheckBox As CheckBox
-    Friend WithEvents VCW_TextBox As TextBox
-    Friend WithEvents VCW_Button As Button
+    Friend WithEvents PW_TextBox As TextBox
+    Friend WithEvents PW_Button As Button
     Friend WithEvents InfoText1 As Label
     Friend WithEvents VerText As Label
     Friend WithEvents CM_ComboBox As ComboBox
     Friend WithEvents fbd_path As FolderBrowserDialog
+    Friend WithEvents SaveButton As Button
+    Friend WithEvents CW_Info As Label
+    Friend WithEvents VCW_Info As Label
+    Friend WithEvents GazuaButton As Button
+    Friend WithEvents GazuaTCheckBox As CheckBox
+    Friend WithEvents CLogButton As Button
+    Friend WithEvents EDITCModeButton As Button
+    Friend WithEvents OpenGITCheckBox As CheckBox
+    Friend WithEvents GITPathTextBox As TextBox
+    Friend WithEvents GITPathButton As Button
+    Friend WithEvents ofd_path As OpenFileDialog
 End Class

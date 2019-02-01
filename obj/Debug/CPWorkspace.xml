@@ -22,5 +22,15 @@ CPWorkspace
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:CPWorkspace.modINI.Wini(System.String,System.String)">
+ <summary>
+ Helping Code with easily and simply from Writeini().
+ </summary>
+</member>
+<member name="M:CPWorkspace.modINI.Rini(System.String)">
+ <summary>
+ Helping Code with easily and simply from Readini().
+ </summary>
+</member>
 </members>
 </doc>

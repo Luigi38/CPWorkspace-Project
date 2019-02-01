@@ -1,0 +1,9 @@
+2019-02-02 Sat. -CPWorkspace V1.0.0.0 Final Version. (Release 6)
+
+- Developed Core Functions
+- Developed "Open GIT After Ctrl + C/V" Function
+- Developed "Commit Log" Function
+- Developing Editing "Custom Mode"
+- Developing Reading "Custom Mode Items"
+- Fixed some bugs
+- Optimized Functions
