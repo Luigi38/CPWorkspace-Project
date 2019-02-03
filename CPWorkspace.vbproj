@@ -82,6 +82,12 @@
     <Compile Include="CommitLog.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPFile.Designer.vb">
+      <DependentUpon>CPFile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPFile.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainProject.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -104,16 +110,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Settings.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CommitLog.resx">
       <DependentUpon>CommitLog.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CPFile.resx">
+      <DependentUpon>CPFile.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainProject.resx">
       <DependentUpon>MainProject.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>

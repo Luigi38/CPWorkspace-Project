@@ -1,10 +1,8 @@
-2019-02-02 Sat. -CPWorkspace V1.0.0.0 Final Version. (Release 8, Hotfix V3)
+2019-02-03 Sun. -CPWorkspace V1.0.0.1 Final Version. (Release 1)
 
 - Added Icon at Main Form
-- Transformed some things
-- Developed Core Functions
-- Developed "Open GIT After Ctrl + C/V" Function
-- Developed "Commit Log" Function
+- Transformed SOMETHINGS :)
+- Developed "CP File". CP File copies the Files
 - Developing Editing "Custom Mode"
 - Developing Reading "Custom Mode Items"
 - Fixed some bugs

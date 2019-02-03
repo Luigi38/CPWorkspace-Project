@@ -64,14 +64,14 @@ Public Class MainProject
         '-Load Settings
         VerText.Text = "     Version. " + My.Application.Info.Version.ToString
 
-        If Not Rini("CWPath") = "Default" Then 'Reading "To Copy Folder" Path
+        If Not Rini("CWPath") = "N/A" Then 'Reading "To Copy Folder" Path
             CW_TextBox.Text = Rini("CWPath")
             CWTrue = True
         Else
             CW_TextBox.Text = "Select your Workspace Folder"
         End If
 
-        If Not Rini("PWPath") = "Default" Then 'Reading "To Paste Folder" Path
+        If Not Rini("PWPath") = "N/A" Then 'Reading "To Paste Folder" Path
             PW_TextBox.Text = Rini("PWPath")
             PWTrue = True
         Else
@@ -141,6 +141,7 @@ Public Class MainProject
             If CMInt = 1 Then
                 CM_ComboBox.Enabled = False
                 EDITCModeButton.Enabled = False
+                CMInt = 0
             End If
         End If
     End Sub
@@ -150,22 +151,22 @@ Public Class MainProject
             If Not CW_TextBox.Text = "Select your Workspace Folder" Then
                 Wini("CWPath", CW_TextBox.Text)
             Else
-                Wini("CWPath", "Default")
+                Wini("CWPath", "N/A")
             End If
 
             If CW_TextBox.Text = "/def" Then
-                Wini("CWPath", "Default")
+                Wini("CWPath", "N/A")
                 CW_TextBox.Text = "Select Your Workspace Folder"
             End If
 
             If Not PW_TextBox.Text = "Select your Repos Folder" Then
                 Wini("PWPath", PW_TextBox.Text)
             Else
-                Wini("PWPath", "Default")
+                Wini("PWPath", "N/A")
             End If
 
             If PW_TextBox.Text = "/def" Then
-                Wini("PWPath", "Default")
+                Wini("PWPath", "N/A")
                 PW_TextBox.Text = "Select your Repos Folder"
             End If
 
@@ -285,6 +286,18 @@ Public Class MainProject
         If ofd_path.ShowDialog() = DialogResult.OK Then
             GITPathTextBox.Text = ofd_path.FileName
             GITTrue = True
+        End If
+    End Sub
+
+    Private Sub CPFileButton_Click(sender As Object, e As EventArgs) Handles CPFileButton.Click
+        CPFile.Show()
+    End Sub
+
+    Private Sub GazuaTCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles GazuaTCheckBox.CheckedChanged
+        If GazuaTCheckBox.Checked = False Then
+            Wini("GTwEnabled", "False")
+            SaveButton.Enabled = True
+            GazuaButton.Text = "Ctrl + C/V"
         End If
     End Sub
 End Class

@@ -41,9 +41,10 @@ Partial Class MainProject
         Me.GITPathTextBox = New System.Windows.Forms.TextBox()
         Me.GITPathButton = New System.Windows.Forms.Button()
         Me.ofd_path = New System.Windows.Forms.OpenFileDialog()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.VerText = New System.Windows.Forms.Label()
         Me.InfoText1 = New System.Windows.Forms.Label()
+        Me.CPFileButton = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -110,7 +111,7 @@ Partial Class MainProject
         'SaveButton
         '
         Me.SaveButton.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SaveButton.Location = New System.Drawing.Point(248, 135)
+        Me.SaveButton.Location = New System.Drawing.Point(246, 126)
         Me.SaveButton.Name = "SaveButton"
         Me.SaveButton.Size = New System.Drawing.Size(116, 67)
         Me.SaveButton.TabIndex = 9
@@ -125,7 +126,7 @@ Partial Class MainProject
         Me.CW_Info.Name = "CW_Info"
         Me.CW_Info.Size = New System.Drawing.Size(221, 17)
         Me.CW_Info.TabIndex = 10
-        Me.CW_Info.Text = "To Copy Folder (ex: Project/Ctrl_C)"
+        Me.CW_Info.Text = "To Copy Folder (ex: Project\Ctrl_C)"
         '
         'VCW_Info
         '
@@ -135,7 +136,7 @@ Partial Class MainProject
         Me.VCW_Info.Name = "VCW_Info"
         Me.VCW_Info.Size = New System.Drawing.Size(224, 17)
         Me.VCW_Info.TabIndex = 11
-        Me.VCW_Info.Text = "To Paste Folder (ex: Project/Ctrl_V)"
+        Me.VCW_Info.Text = "To Paste Folder (ex: Project\Ctrl_V)"
         '
         'GazuaButton
         '
@@ -161,7 +162,7 @@ Partial Class MainProject
         'CLogButton
         '
         Me.CLogButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CLogButton.Location = New System.Drawing.Point(507, 10)
+        Me.CLogButton.Location = New System.Drawing.Point(507, 8)
         Me.CLogButton.Name = "CLogButton"
         Me.CLogButton.Size = New System.Drawing.Size(126, 27)
         Me.CLogButton.TabIndex = 14
@@ -215,16 +216,6 @@ Partial Class MainProject
         '
         Me.ofd_path.Filter = "Executable File|*.exe"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.CPWorkspace.My.Resources.Resources.CPWorkspace
-        Me.PictureBox1.Location = New System.Drawing.Point(474, 168)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(159, 150)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 19
-        Me.PictureBox1.TabStop = False
-        '
         'VerText
         '
         Me.VerText.AutoSize = True
@@ -245,11 +236,32 @@ Partial Class MainProject
         Me.InfoText1.TabIndex = 20
         Me.InfoText1.Text = "By MineEric64 (최에릭) - Git"
         '
+        'CPFileButton
+        '
+        Me.CPFileButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CPFileButton.Location = New System.Drawing.Point(246, 199)
+        Me.CPFileButton.Name = "CPFileButton"
+        Me.CPFileButton.Size = New System.Drawing.Size(116, 27)
+        Me.CPFileButton.TabIndex = 22
+        Me.CPFileButton.Text = "CP Files"
+        Me.CPFileButton.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.CPWorkspace.My.Resources.Resources.CPWorkspace
+        Me.PictureBox1.Location = New System.Drawing.Point(474, 168)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(159, 150)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 19
+        Me.PictureBox1.TabStop = False
+        '
         'MainProject
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(645, 330)
+        Me.Controls.Add(Me.CPFileButton)
         Me.Controls.Add(Me.VerText)
         Me.Controls.Add(Me.InfoText1)
         Me.Controls.Add(Me.PictureBox1)
@@ -299,4 +311,5 @@ Partial Class MainProject
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents VerText As Label
     Friend WithEvents InfoText1 As Label
+    Friend WithEvents CPFileButton As Button
 End Class
