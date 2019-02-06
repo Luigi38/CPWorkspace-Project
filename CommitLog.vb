@@ -16,6 +16,7 @@ Public Class CommitLog
                         fs.Close()
                         Wini("CLPath", sfd1.FileName)
                         CLogPathTextBox.Text = sfd1.FileName
+                        CLogText.Text = "Now, you can write and save the Commit Log! :D"
                         MessageBox.Show("Created Commit Log File!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                 ElseIf DialogResult.Cancel Then
@@ -49,6 +50,7 @@ Public Class CommitLog
             fs.Close()
             Wini("CLPath", sfd1.FileName)
             CLogPathTextBox.Text = sfd1.FileName
+            CLogText.Text = "Now, you can write and save the Commit Log! :D"
             MessageBox.Show("Created Commit Log File!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub

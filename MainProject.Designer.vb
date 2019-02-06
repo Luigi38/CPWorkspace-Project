@@ -44,8 +44,8 @@ Partial Class MainProject
         Me.VerText = New System.Windows.Forms.Label()
         Me.InfoText1 = New System.Windows.Forms.Label()
         Me.CPFileButton = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CPW_Icon = New System.Windows.Forms.PictureBox()
+        CType(Me.CPW_Icon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CW_Button
@@ -246,15 +246,15 @@ Partial Class MainProject
         Me.CPFileButton.Text = "CP Files"
         Me.CPFileButton.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'CPW_Icon
         '
-        Me.PictureBox1.Image = Global.CPWorkspace.My.Resources.Resources.CPWorkspace
-        Me.PictureBox1.Location = New System.Drawing.Point(474, 168)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(159, 150)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 19
-        Me.PictureBox1.TabStop = False
+        Me.CPW_Icon.Image = Global.CPWorkspace.My.Resources.Resources.CPWorkspace
+        Me.CPW_Icon.Location = New System.Drawing.Point(474, 168)
+        Me.CPW_Icon.Name = "CPW_Icon"
+        Me.CPW_Icon.Size = New System.Drawing.Size(159, 150)
+        Me.CPW_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.CPW_Icon.TabIndex = 19
+        Me.CPW_Icon.TabStop = False
         '
         'MainProject
         '
@@ -264,7 +264,7 @@ Partial Class MainProject
         Me.Controls.Add(Me.CPFileButton)
         Me.Controls.Add(Me.VerText)
         Me.Controls.Add(Me.InfoText1)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.CPW_Icon)
         Me.Controls.Add(Me.GITPathTextBox)
         Me.Controls.Add(Me.GITPathButton)
         Me.Controls.Add(Me.OpenGITCheckBox)
@@ -284,7 +284,7 @@ Partial Class MainProject
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainProject"
         Me.Text = "Copy/Paste Workspace for Git"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CPW_Icon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -308,7 +308,7 @@ Partial Class MainProject
     Friend WithEvents GITPathTextBox As TextBox
     Friend WithEvents GITPathButton As Button
     Friend WithEvents ofd_path As OpenFileDialog
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents CPW_Icon As PictureBox
     Friend WithEvents VerText As Label
     Friend WithEvents InfoText1 As Label
     Friend WithEvents CPFileButton As Button

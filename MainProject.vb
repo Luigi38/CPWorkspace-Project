@@ -251,10 +251,6 @@ Public Class MainProject
             If OpenGITCheckBox.Checked = True Then 'Open Git Program!
                 If GITTrue = True Then
                     '-Process "Git Program"
-                    Dim p As New ProcessStartInfo
-                    p.FileName = GITPathTextBox.Text
-                    Dim pr As New Process
-                    pr.StartInfo = p
                     Process.Start(GITPathTextBox.Text)
                 Else
                     MessageBox.Show("Error! - No such Git Program. Did you select the GIT path properly?", Me.Text,
