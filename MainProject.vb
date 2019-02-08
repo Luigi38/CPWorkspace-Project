@@ -117,6 +117,9 @@ Public Class MainProject
     End Sub
 
     Private Sub CW_Button_Click(sender As Object, e As EventArgs) Handles CW_Button.Click
+        If Not Rini("CWPath") = "N/A" Then
+            fbd_path.SelectedPath = Rini("CWPath")
+        End If
         fbd_path.Description = "Select your Workspace Folder"
         If fbd_path.ShowDialog = DialogResult.OK Then
             CW_TextBox.Text = fbd_path.SelectedPath
@@ -124,7 +127,10 @@ Public Class MainProject
         End If
     End Sub
 
-    Private Sub VCW_Button_Click(sender As Object, e As EventArgs) Handles PW_Button.Click
+    Private Sub PW_Button_Click(sender As Object, e As EventArgs) Handles PW_Button.Click
+        If Not Rini("PWPath") = "N/A" Then
+            fbd_path.SelectedPath = Rini("PWPath")
+        End If
         fbd_path.Description = "Select your Repos Folder"
         If fbd_path.ShowDialog = DialogResult.OK Then
             PW_TextBox.Text = fbd_path.SelectedPath
