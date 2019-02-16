@@ -85,7 +85,7 @@ Partial Class MainProject
         Me.PW_TextBox.Name = "PW_TextBox"
         Me.PW_TextBox.Size = New System.Drawing.Size(284, 26)
         Me.PW_TextBox.TabIndex = 5
-        Me.PW_TextBox.Text = "VCWorkspace"
+        Me.PW_TextBox.Text = "PWorkspace"
         '
         'PW_Button
         '
@@ -283,7 +283,7 @@ Partial Class MainProject
         Me.Controls.Add(Me.CW_Button)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainProject"
-        Me.Text = "Copy/Paste Workspace for Git"
+        Me.Text = "Workspace Git: The Final Version."
         CType(Me.CPW_Icon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

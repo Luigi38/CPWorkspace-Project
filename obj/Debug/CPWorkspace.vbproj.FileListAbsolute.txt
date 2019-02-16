@@ -12,3 +12,4 @@ C:\Users\SAMSUNG\Documents\Visual Studio 2017\Projects\UniConverter Project\CPWo
 C:\Users\SAMSUNG\Documents\Visual Studio 2017\Projects\UniConverter Project\CPWorkspace\obj\Debug\CPWorkspace.xml
 C:\Users\SAMSUNG\Documents\Visual Studio 2017\Projects\UniConverter Project\CPWorkspace\obj\Debug\CPWorkspace.pdb
 C:\Users\SAMSUNG\Documents\Visual Studio 2017\Projects\UniConverter Project\CPWorkspace\obj\Debug\CPWorkspace.vbprojAssemblyReference.cache
+C:\Users\SAMSUNG\documents\visual studio 2017\Projects\UniConverter Project\CPWorkspace\obj\Debug\CPWorkspace.CMode.resources

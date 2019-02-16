@@ -27,6 +27,21 @@ CPWorkspace
   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
 </summary>
 </member>
+<member name="M:CPWorkspace.CMode.Cntstr(System.String,System.String)">
+ <summary>
+ String의 수를 세줍니다. 결과는 Integer.
+ </summary>
+</member>
+<member name="M:CPWorkspace.modX.WX(System.String,System.String)">
+ <summary>
+ Helping Code with easily and simply from Writeini().
+ </summary>
+</member>
+<member name="M:CPWorkspace.modX.RX(System.String)">
+ <summary>
+ Helping Code with easily and simply from Readini().
+ </summary>
+</member>
 <member name="M:CPWorkspace.modINI.Wini(System.String,System.String)">
  <summary>
  Helping Code with easily and simply from Writeini().

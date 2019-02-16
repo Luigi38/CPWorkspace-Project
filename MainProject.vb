@@ -302,4 +302,14 @@ Public Class MainProject
             GazuaButton.Text = "Ctrl + C/V"
         End If
     End Sub
+
+    Private Sub EDITCModeButton_Click(sender As Object, e As EventArgs) Handles EDITCModeButton.Click
+        CMode.Show()
+    End Sub
+
+    Private Sub VerText_Click(sender As Object, e As EventArgs) Handles VerText.DoubleClick
+        MessageBox.Show("Workspace Git V" & My.Application.Info.Version.ToString & ": The Final Version." & vbNewLine &
+                        "Support Only For Developers.", Me.Text,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
 End Class
