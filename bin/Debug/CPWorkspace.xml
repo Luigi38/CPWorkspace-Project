@@ -27,6 +27,11 @@ CPWorkspace
   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
 </summary>
 </member>
+<member name="P:CPWorkspace.My.Resources.Resources.CPWorkspace_V2">
+<summary>
+  System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+</summary>
+</member>
 <member name="M:CPWorkspace.CMode.Cntstr(System.String,System.String)">
  <summary>
  String의 수를 세줍니다. 결과는 Integer.

@@ -55,11 +55,14 @@ Public Class MainProject
     Dim PWTrue As Boolean
     Dim GITTrue As Boolean
     Dim GTwTrue As Boolean
+    Dim BakTrue As Boolean
+
     Private Sub MainProject_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'CM_ComboBox.Items.Item(0).ToString 'Output: Hello, World!
         CWTrue = False
         PWTrue = False
         GITTrue = False
+        BakTrue = False
 
         '-Load Settings
         VerText.Text = "     Version. " + My.Application.Info.Version.ToString
@@ -101,8 +104,31 @@ Public Class MainProject
             Else GITPathTextBox.Text = "Select GIT Program Path"
             End If
             GITPathButton.Visible = True
-            Else
-                OpenGITCheckBox.Checked = False
+        Else
+            OpenGITCheckBox.Checked = False
+        End If
+
+        If Rini("BakEnabled") = "True" Then 'Backup Folder
+            BakCheckBox.Checked = True
+            BW_TextBox.Visible = True
+            If Not Rini("BWPath") = "N/A" Then
+                BW_TextBox.Text = Rini("BWPath")
+                BakTrue = True
+            Else BW_TextBox.Text = "Select Bakup Folder Path"
+            End If
+            BakButton.Visible = True
+        Else
+            BakCheckBox.Checked = False
+        End If
+
+        If Rini("DelDirEnabled") = "True" Then 'Delete Paste Directory Before Copy it
+            DelDirCheckBox.Checked = True
+        Else DelDirCheckBox.Checked = False
+        End If
+
+        If Rini("AutoExitEnabled") = "True" Then 'Auto Exit
+            ExitCheckBox.Checked = True
+        Else ExitCheckBox.Checked = False
         End If
 
         'Custom Mode Items (BETA)
@@ -215,9 +241,32 @@ Public Class MainProject
                 Else Wini("GITPath", "N/A")
                 End If
             Else
-                    Wini("OpenGITEnabled", "False")
-                    Wini("GITPath", "N/A")
+                Wini("OpenGITEnabled", "False")
+                Wini("GITPath", "N/A")
+            End If
+
+            If BakCheckBox.Checked = True Then
+                Wini("BakEnabled", "True")
+                If BakTrue = True Then
+                    Wini("BWPath", BW_TextBox.Text)
+                Else Wini("BWPath", "N/A")
                 End If
+            Else
+                Wini("BakEnabled", "False")
+                Wini("BWPath", "N/A")
+            End If
+
+            If DelDirCheckBox.Checked = True Then
+                Wini("DelDirEnabled", "True")
+            Else
+                Wini("DelDirEnabled", "False")
+            End If
+
+            If ExitCheckBox.Checked = True Then
+                Wini("AutoExitEnabled", "True")
+            Else
+                Wini("AutoExitEnabled", "False")
+            End If
 
             If Not GTwInt = 1 Then
                 MessageBox.Show("Saved Settings!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -230,6 +279,7 @@ Public Class MainProject
 
     Private Sub GazuaButton_Click(sender As Object, e As EventArgs) Handles GazuaButton.Click
         Try
+            Dim GoUpBak As Boolean
             Dim CopyDirInfo As New DirectoryInfo(CW_TextBox.Text)
             Dim PasDirInfo As New DirectoryInfo(PW_TextBox.Text)
             Dim SubDir As DirectoryInfo
@@ -238,34 +288,63 @@ Public Class MainProject
                 SaveButton_Click(Nothing, Nothing)
             End If
 
+            If Rini("BakEnabled") = "True" Then
+                If Not Rini("BWPath") = "N/A" Then
+                    GoUpBak = True
+                Else GoUpBak = False
+                End If
+            Else GoUpBak = False
+            End If
+
             If CWTrue And PWTrue = True Then 'Check If Directory Exists & Selects.
                 '-Copy & Paste Directory Code (BETA)
-                For Each GetFolders In CopyDirInfo.GetFiles()
-                    GetFolders.CopyTo(Path.Combine(PasDirInfo.FullName, GetFolders.Name), True)
-                Next
+                If GoUpBak = True Then
+                    Dim BakDirInfo As New DirectoryInfo(BW_TextBox.Text)
 
-                For Each SubDir In CopyDirInfo.GetDirectories()
-                    My.Computer.FileSystem.CopyDirectory(SubDir.FullName, Path.Combine(PasDirInfo.FullName, SubDir.Name), True)
-                Next
+                    For Each GetFolders In PasDirInfo.GetFiles()
+                        GetFolders.CopyTo(Path.Combine(BakDirInfo.FullName, GetFolders.Name), True)
+                    Next
 
-                MessageBox.Show("Copied & Pasted Repos Folder!" & vbNewLine & "LET'S GO TO THE GIT AND PUSH THE REPOSITORY!",
-        Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Else
-                MessageBox.Show("Error - You should select Folder Path!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-
-            If OpenGITCheckBox.Checked = True Then 'Open Git Program!
-                If GITTrue = True Then
-                    '-Process "Git Program"
-                    Process.Start(GITPathTextBox.Text)
-                Else
-                    MessageBox.Show("Error! - No such Git Program. Did you select the GIT path properly?", Me.Text,
-    MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    For Each SubDir In PasDirInfo.GetDirectories()
+                        My.Computer.FileSystem.CopyDirectory(SubDir.FullName, Path.Combine(BakDirInfo.FullName, SubDir.Name), True)
+                    Next
                 End If
-            End If
 
-        Catch ex As Exception
-            MessageBox.Show("Error - " & ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                If Rini("DelDirEnabled") = "True" Then
+                    Try
+                        My.Computer.FileSystem.DeleteDirectory(PasDirInfo.FullName, FileIO.DeleteDirectoryOption.DeleteAllContents)
+                        My.Computer.FileSystem.CreateDirectory(PasDirInfo.FullName)
+                    Catch ex As IOException
+                    End Try
+                End If
+
+                For Each GetFolders In CopyDirInfo.GetFiles()
+                        GetFolders.CopyTo(Path.Combine(PasDirInfo.FullName, GetFolders.Name), True)
+                    Next
+
+                    For Each SubDir In CopyDirInfo.GetDirectories()
+                        My.Computer.FileSystem.CopyDirectory(SubDir.FullName, Path.Combine(PasDirInfo.FullName, SubDir.Name), True)
+                    Next
+
+                    MessageBox.Show("Copied & Pasted Repos Folder!" & vbNewLine & "LET'S GO TO THE GIT AND PUSH THE REPOSITORY!",
+    Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    If Rini("AutoExitEnabled") = "True" Then Application.Exit()
+                Else
+                    MessageBox.Show("Error - You should select Folder Path!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+
+                If OpenGITCheckBox.Checked = True Then 'Open Git Program!
+                    If GITTrue = True Then
+                        '-Process "Git Program"
+                        Process.Start(GITPathTextBox.Text)
+                    Else
+                        MessageBox.Show("Error! - No such Git Program. Did you select the GIT path properly?", Me.Text,
+    MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                End If
+
+            Catch ex As Exception
+            MessageBox.Show("Error - " & ex.Message & vbNewLine & "Error Message: " & ex.StackTrace, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -280,6 +359,7 @@ Public Class MainProject
         Else
             GITPathTextBox.Visible = False
             GITPathButton.Visible = False
+            GITTrue = False
         End If
     End Sub
 
@@ -311,5 +391,36 @@ Public Class MainProject
         MessageBox.Show("Workspace Git V" & My.Application.Info.Version.ToString & ": The Final Version." & vbNewLine &
                         "Support Only For Developers.", Me.Text,
                         MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub BakCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles BakCheckBox.CheckedChanged
+        If BakCheckBox.Checked = True Then
+            BW_TextBox.Visible = True
+            BakButton.Visible = True
+        Else
+            BW_TextBox.Visible = False
+            BakButton.Visible = False
+            BakTrue = False
+        End If
+    End Sub
+
+    Private Sub BakButton_Click(sender As Object, e As EventArgs) Handles BakButton.Click
+        If Not Rini("BWPath") = "N/A" Then
+            fbd_path.SelectedPath = Rini("BWPath")
+        End If
+
+        fbd_path.Description = "Select to your Backup Folder"
+        If fbd_path.ShowDialog = DialogResult.OK Then
+            BW_TextBox.Text = fbd_path.SelectedPath
+            BakTrue = True
+        End If
+    End Sub
+
+    Private Sub DelDirButton_Click(sender As Object, e As EventArgs) Handles DelDirButton.Click
+        If PWTrue = True Then
+            Process.Start("explorer.exe", PW_TextBox.Text)
+        Else
+            MessageBox.Show("You have to select Workspace Folder first!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 End Class

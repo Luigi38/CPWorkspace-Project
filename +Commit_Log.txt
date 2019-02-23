@@ -1,7 +1,0 @@
-2019-02-03 Sun. -CPWorkspace V1.0.0.2 Final Version (Release 3).
-
-- Edited some functions conveniently :)
-- Developing Editing "Custom Mode"
-- Developing Reading "Custom Mode Items"
-- Fixed some bugs
-- Optimized Functions
