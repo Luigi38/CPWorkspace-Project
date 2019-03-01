@@ -333,7 +333,13 @@ Public Class MainProject
                     For Each GetFiles In PasDirInfo.GetFiles()
                         If File.Exists(Path.Combine(CopyDirInfo.FullName, GetFiles.Name)) = False Then
                             If GetFiles.IsReadOnly = False Then
-                                If Not GetFiles.FullName.Contains(".git") Then File.Delete(GetFiles.FullName)
+                                If Not GetFiles.FullName.Contains(".git") Then
+                                    If Not GetFiles.Name = "README.md" Then
+                                        If Not GetFiles.Name = ".gitattributes" Then
+                                            If Not GetFiles.Name = ".gitignore" Then File.Delete(GetFiles.FullName)
+                                        End If
+                                        End If
+                                    End If
                             End If
                         End If
                     Next
