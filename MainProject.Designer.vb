@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MainProject
     Inherits System.Windows.Forms.Form
 
     'Form은 Dispose를 재정의하여 구성 요소 목록을 정리합니다.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MainProject
     '참고: 다음 프로시저는 Windows Form 디자이너에 필요합니다.
     '수정하려면 Windows Form 디자이너를 사용하십시오.  
     '코드 편집기에서는 수정하지 마세요.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainProject))
         Me.CW_Button = New System.Windows.Forms.Button()
@@ -51,13 +51,15 @@ Partial Class MainProject
         Me.DelDirCheckBox = New System.Windows.Forms.CheckBox()
         Me.ExitCheckBox = New System.Windows.Forms.CheckBox()
         Me.DelDirButton = New System.Windows.Forms.Button()
+        Me.WeRCheckBox = New System.Windows.Forms.CheckBox()
+        Me.WeRLabel = New System.Windows.Forms.Label()
         CType(Me.CPW_Icon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CW_Button
         '
         Me.CW_Button.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CW_Button.Location = New System.Drawing.Point(341, 33)
+        Me.CW_Button.Location = New System.Drawing.Point(318, 31)
         Me.CW_Button.Name = "CW_Button"
         Me.CW_Button.Size = New System.Drawing.Size(103, 26)
         Me.CW_Button.TabIndex = 0
@@ -67,7 +69,7 @@ Partial Class MainProject
         'CW_TextBox
         '
         Me.CW_TextBox.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CW_TextBox.Location = New System.Drawing.Point(39, 33)
+        Me.CW_TextBox.Location = New System.Drawing.Point(28, 31)
         Me.CW_TextBox.Name = "CW_TextBox"
         Me.CW_TextBox.Size = New System.Drawing.Size(284, 26)
         Me.CW_TextBox.TabIndex = 1
@@ -77,7 +79,7 @@ Partial Class MainProject
         '
         Me.CM_CheckBox.AutoSize = True
         Me.CM_CheckBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CM_CheckBox.Location = New System.Drawing.Point(49, 151)
+        Me.CM_CheckBox.Location = New System.Drawing.Point(72, 168)
         Me.CM_CheckBox.Name = "CM_CheckBox"
         Me.CM_CheckBox.Size = New System.Drawing.Size(156, 21)
         Me.CM_CheckBox.TabIndex = 3
@@ -87,7 +89,7 @@ Partial Class MainProject
         'PW_TextBox
         '
         Me.PW_TextBox.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PW_TextBox.Location = New System.Drawing.Point(39, 89)
+        Me.PW_TextBox.Location = New System.Drawing.Point(28, 87)
         Me.PW_TextBox.Name = "PW_TextBox"
         Me.PW_TextBox.Size = New System.Drawing.Size(284, 26)
         Me.PW_TextBox.TabIndex = 5
@@ -96,7 +98,7 @@ Partial Class MainProject
         'PW_Button
         '
         Me.PW_Button.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PW_Button.Location = New System.Drawing.Point(341, 89)
+        Me.PW_Button.Location = New System.Drawing.Point(318, 88)
         Me.PW_Button.Name = "PW_Button"
         Me.PW_Button.Size = New System.Drawing.Size(103, 26)
         Me.PW_Button.TabIndex = 4
@@ -108,7 +110,7 @@ Partial Class MainProject
         Me.CM_ComboBox.Enabled = False
         Me.CM_ComboBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CM_ComboBox.FormattingEnabled = True
-        Me.CM_ComboBox.Location = New System.Drawing.Point(49, 121)
+        Me.CM_ComboBox.Location = New System.Drawing.Point(72, 138)
         Me.CM_ComboBox.Name = "CM_ComboBox"
         Me.CM_ComboBox.Size = New System.Drawing.Size(184, 25)
         Me.CM_ComboBox.TabIndex = 8
@@ -117,9 +119,9 @@ Partial Class MainProject
         'SaveButton
         '
         Me.SaveButton.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SaveButton.Location = New System.Drawing.Point(329, 151)
+        Me.SaveButton.Location = New System.Drawing.Point(507, 107)
         Me.SaveButton.Name = "SaveButton"
-        Me.SaveButton.Size = New System.Drawing.Size(137, 80)
+        Me.SaveButton.Size = New System.Drawing.Size(126, 65)
         Me.SaveButton.TabIndex = 9
         Me.SaveButton.Text = "Save SETTINGS!"
         Me.SaveButton.UseVisualStyleBackColor = True
@@ -128,7 +130,7 @@ Partial Class MainProject
         '
         Me.CW_Info.AutoSize = True
         Me.CW_Info.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CW_Info.Location = New System.Drawing.Point(46, 13)
+        Me.CW_Info.Location = New System.Drawing.Point(35, 11)
         Me.CW_Info.Name = "CW_Info"
         Me.CW_Info.Size = New System.Drawing.Size(221, 17)
         Me.CW_Info.TabIndex = 10
@@ -138,7 +140,7 @@ Partial Class MainProject
         '
         Me.VCW_Info.AutoSize = True
         Me.VCW_Info.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.VCW_Info.Location = New System.Drawing.Point(46, 69)
+        Me.VCW_Info.Location = New System.Drawing.Point(35, 67)
         Me.VCW_Info.Name = "VCW_Info"
         Me.VCW_Info.Size = New System.Drawing.Size(224, 17)
         Me.VCW_Info.TabIndex = 11
@@ -147,9 +149,9 @@ Partial Class MainProject
         'GazuaButton
         '
         Me.GazuaButton.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GazuaButton.Location = New System.Drawing.Point(475, 115)
+        Me.GazuaButton.Location = New System.Drawing.Point(446, 179)
         Me.GazuaButton.Name = "GazuaButton"
-        Me.GazuaButton.Size = New System.Drawing.Size(159, 92)
+        Me.GazuaButton.Size = New System.Drawing.Size(187, 92)
         Me.GazuaButton.TabIndex = 12
         Me.GazuaButton.Text = "Ctrl + C/V"
         Me.GazuaButton.UseVisualStyleBackColor = True
@@ -158,7 +160,7 @@ Partial Class MainProject
         '
         Me.GazuaTCheckBox.AutoSize = True
         Me.GazuaTCheckBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GazuaTCheckBox.Location = New System.Drawing.Point(12, 355)
+        Me.GazuaTCheckBox.Location = New System.Drawing.Point(12, 422)
         Me.GazuaTCheckBox.Name = "GazuaTCheckBox"
         Me.GazuaTCheckBox.Size = New System.Drawing.Size(183, 21)
         Me.GazuaTCheckBox.TabIndex = 13
@@ -190,7 +192,7 @@ Partial Class MainProject
         '
         Me.OpenGITCheckBox.AutoSize = True
         Me.OpenGITCheckBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OpenGITCheckBox.Location = New System.Drawing.Point(12, 328)
+        Me.OpenGITCheckBox.Location = New System.Drawing.Point(12, 395)
         Me.OpenGITCheckBox.Name = "OpenGITCheckBox"
         Me.OpenGITCheckBox.Size = New System.Drawing.Size(191, 21)
         Me.OpenGITCheckBox.TabIndex = 16
@@ -200,7 +202,7 @@ Partial Class MainProject
         'GITPathTextBox
         '
         Me.GITPathTextBox.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GITPathTextBox.Location = New System.Drawing.Point(12, 296)
+        Me.GITPathTextBox.Location = New System.Drawing.Point(12, 363)
         Me.GITPathTextBox.Name = "GITPathTextBox"
         Me.GITPathTextBox.Size = New System.Drawing.Size(284, 26)
         Me.GITPathTextBox.TabIndex = 18
@@ -210,7 +212,7 @@ Partial Class MainProject
         'GITPathButton
         '
         Me.GITPathButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GITPathButton.Location = New System.Drawing.Point(209, 324)
+        Me.GITPathButton.Location = New System.Drawing.Point(209, 391)
         Me.GITPathButton.Name = "GITPathButton"
         Me.GITPathButton.Size = New System.Drawing.Size(103, 26)
         Me.GITPathButton.TabIndex = 17
@@ -226,7 +228,7 @@ Partial Class MainProject
         '
         Me.VerText.AutoSize = True
         Me.VerText.Font = New System.Drawing.Font("Adobe Fan Heiti Std B", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.VerText.Location = New System.Drawing.Point(471, 352)
+        Me.VerText.Location = New System.Drawing.Point(471, 419)
         Me.VerText.Name = "VerText"
         Me.VerText.Size = New System.Drawing.Size(162, 24)
         Me.VerText.TabIndex = 21
@@ -236,7 +238,7 @@ Partial Class MainProject
         '
         Me.InfoText1.AutoSize = True
         Me.InfoText1.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InfoText1.Location = New System.Drawing.Point(432, 332)
+        Me.InfoText1.Location = New System.Drawing.Point(432, 399)
         Me.InfoText1.Name = "InfoText1"
         Me.InfoText1.Size = New System.Drawing.Size(201, 20)
         Me.InfoText1.TabIndex = 20
@@ -245,9 +247,9 @@ Partial Class MainProject
         'CPFileButton
         '
         Me.CPFileButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CPFileButton.Location = New System.Drawing.Point(329, 245)
+        Me.CPFileButton.Location = New System.Drawing.Point(446, 8)
         Me.CPFileButton.Name = "CPFileButton"
-        Me.CPFileButton.Size = New System.Drawing.Size(137, 39)
+        Me.CPFileButton.Size = New System.Drawing.Size(54, 164)
         Me.CPFileButton.TabIndex = 22
         Me.CPFileButton.Text = "CP Files"
         Me.CPFileButton.UseVisualStyleBackColor = True
@@ -255,7 +257,7 @@ Partial Class MainProject
         'BW_TextBox
         '
         Me.BW_TextBox.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BW_TextBox.Location = New System.Drawing.Point(12, 178)
+        Me.BW_TextBox.Location = New System.Drawing.Point(12, 216)
         Me.BW_TextBox.Name = "BW_TextBox"
         Me.BW_TextBox.Size = New System.Drawing.Size(284, 26)
         Me.BW_TextBox.TabIndex = 24
@@ -265,7 +267,7 @@ Partial Class MainProject
         'BakButton
         '
         Me.BakButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BakButton.Location = New System.Drawing.Point(164, 210)
+        Me.BakButton.Location = New System.Drawing.Point(203, 249)
         Me.BakButton.Name = "BakButton"
         Me.BakButton.Size = New System.Drawing.Size(103, 26)
         Me.BakButton.TabIndex = 23
@@ -277,17 +279,17 @@ Partial Class MainProject
         '
         Me.BakCheckBox.AutoSize = True
         Me.BakCheckBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BakCheckBox.Location = New System.Drawing.Point(12, 214)
+        Me.BakCheckBox.Location = New System.Drawing.Point(12, 252)
         Me.BakCheckBox.Name = "BakCheckBox"
-        Me.BakCheckBox.Size = New System.Drawing.Size(149, 21)
+        Me.BakCheckBox.Size = New System.Drawing.Size(190, 21)
         Me.BakCheckBox.TabIndex = 25
-        Me.BakCheckBox.Text = "Backup Copy Folder"
+        Me.BakCheckBox.Text = "[BETA] Backup Copy Folder"
         Me.BakCheckBox.UseVisualStyleBackColor = True
         '
         'CPW_Icon
         '
         Me.CPW_Icon.Image = Global.CPWorkspace.My.Resources.Resources.CPWorkspace_V2
-        Me.CPW_Icon.Location = New System.Drawing.Point(474, 226)
+        Me.CPW_Icon.Location = New System.Drawing.Point(474, 293)
         Me.CPW_Icon.Name = "CPW_Icon"
         Me.CPW_Icon.Size = New System.Drawing.Size(159, 150)
         Me.CPW_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -298,39 +300,64 @@ Partial Class MainProject
         '
         Me.DelDirCheckBox.AutoSize = True
         Me.DelDirCheckBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DelDirCheckBox.Location = New System.Drawing.Point(12, 272)
+        Me.DelDirCheckBox.Location = New System.Drawing.Point(12, 281)
         Me.DelDirCheckBox.Name = "DelDirCheckBox"
-        Me.DelDirCheckBox.Size = New System.Drawing.Size(220, 21)
+        Me.DelDirCheckBox.Size = New System.Drawing.Size(261, 21)
         Me.DelDirCheckBox.TabIndex = 26
-        Me.DelDirCheckBox.Text = "Delete Paste Dir Before Copy it"
+        Me.DelDirCheckBox.Text = "[BETA] Delete Paste Dir Before Copy it"
         Me.DelDirCheckBox.UseVisualStyleBackColor = True
         '
         'ExitCheckBox
         '
         Me.ExitCheckBox.AutoSize = True
         Me.ExitCheckBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ExitCheckBox.Location = New System.Drawing.Point(12, 245)
+        Me.ExitCheckBox.Location = New System.Drawing.Point(12, 336)
         Me.ExitCheckBox.Name = "ExitCheckBox"
-        Me.ExitCheckBox.Size = New System.Drawing.Size(83, 21)
+        Me.ExitCheckBox.Size = New System.Drawing.Size(182, 21)
         Me.ExitCheckBox.TabIndex = 27
-        Me.ExitCheckBox.Text = "Auto Exit"
+        Me.ExitCheckBox.Text = "Auto Exit After Ctrl + C/V"
         Me.ExitCheckBox.UseVisualStyleBackColor = True
         '
         'DelDirButton
         '
         Me.DelDirButton.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DelDirButton.Location = New System.Drawing.Point(236, 268)
+        Me.DelDirButton.Location = New System.Drawing.Point(270, 277)
         Me.DelDirButton.Name = "DelDirButton"
         Me.DelDirButton.Size = New System.Drawing.Size(87, 26)
         Me.DelDirButton.TabIndex = 28
         Me.DelDirButton.Text = "Open Path"
         Me.DelDirButton.UseVisualStyleBackColor = True
         '
+        'WeRCheckBox
+        '
+        Me.WeRCheckBox.AutoSize = True
+        Me.WeRCheckBox.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WeRCheckBox.Location = New System.Drawing.Point(12, 309)
+        Me.WeRCheckBox.Name = "WeRCheckBox"
+        Me.WeRCheckBox.Size = New System.Drawing.Size(168, 21)
+        Me.WeRCheckBox.TabIndex = 29
+        Me.WeRCheckBox.Text = "We are the Champions!"
+        Me.WeRCheckBox.UseVisualStyleBackColor = True
+        '
+        'WeRLabel
+        '
+        Me.WeRLabel.AutoSize = True
+        Me.WeRLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WeRLabel.Location = New System.Drawing.Point(186, 305)
+        Me.WeRLabel.Name = "WeRLabel"
+        Me.WeRLabel.Size = New System.Drawing.Size(281, 28)
+        Me.WeRLabel.TabIndex = 30
+        Me.WeRLabel.Text = "This Function delete files in Paste Directory " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "if files removed in Copy Director" &
+    "y."
+        Me.WeRLabel.Visible = False
+        '
         'MainProject
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(645, 387)
+        Me.ClientSize = New System.Drawing.Size(645, 451)
+        Me.Controls.Add(Me.WeRLabel)
+        Me.Controls.Add(Me.WeRCheckBox)
         Me.Controls.Add(Me.DelDirButton)
         Me.Controls.Add(Me.ExitCheckBox)
         Me.Controls.Add(Me.DelDirCheckBox)
@@ -394,4 +421,6 @@ Partial Class MainProject
     Friend WithEvents DelDirCheckBox As CheckBox
     Friend WithEvents ExitCheckBox As CheckBox
     Friend WithEvents DelDirButton As Button
+    Friend WithEvents WeRCheckBox As CheckBox
+    Friend WithEvents WeRLabel As Label
 End Class

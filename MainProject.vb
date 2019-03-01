@@ -131,6 +131,11 @@ Public Class MainProject
         Else ExitCheckBox.Checked = False
         End If
 
+        If Rini("WeAreTheChampions") = "True" Then
+            WeRCheckBox.Checked = True
+        Else WeRCheckBox.Checked = False
+        End If
+
         'Custom Mode Items (BETA)
         CuStr(0) = "Hello, World!"
         CuStr(1) = "Launchpad MK2"
@@ -268,6 +273,12 @@ Public Class MainProject
                 Wini("AutoExitEnabled", "False")
             End If
 
+            If WeRCheckBox.Checked = True Then
+                Wini("WeAreTheChampions", "True")
+            Else
+                Wini("WeAreTheChampions", "False")
+            End If
+
             If Not GTwInt = 1 Then
                 MessageBox.Show("Saved Settings!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
@@ -318,18 +329,37 @@ Public Class MainProject
                     End Try
                 End If
 
-                For Each GetFolders In CopyDirInfo.GetFiles()
-                        GetFolders.CopyTo(Path.Combine(PasDirInfo.FullName, GetFolders.Name), True)
+                If Rini("WeAreTheChampions") = "True" Then
+                    For Each GetFiles In PasDirInfo.GetFiles()
+                        If File.Exists(Path.Combine(CopyDirInfo.FullName, GetFiles.Name)) = False Then
+                            If GetFiles.IsReadOnly = False Then
+                                If Not GetFiles.FullName.Contains(".git") Then File.Delete(GetFiles.FullName)
+                            End If
+                        End If
                     Next
 
-                    For Each SubDir In CopyDirInfo.GetDirectories()
+                    For Each SubDir In PasDirInfo.GetDirectories()
+                        If My.Computer.FileSystem.DirectoryExists(Path.Combine(CopyDirInfo.FullName, SubDir.Name)) = False Then
+                            If Not (SubDir.Attributes And FileAttributes.Hidden) = FileAttributes.Hidden Then
+                                If Not SubDir.FullName.Contains(".git") Then My.Computer.FileSystem.DeleteDirectory(SubDir.FullName, FileIO.DeleteDirectoryOption.DeleteAllContents)
+                            End If
+                        End If
+                    Next
+                End If
+
+                For Each GetFiles In CopyDirInfo.GetFiles()
+                    GetFiles.CopyTo(Path.Combine(PasDirInfo.FullName, GetFiles.Name), True)
+                Next
+
+                For Each SubDir In CopyDirInfo.GetDirectories()
                         My.Computer.FileSystem.CopyDirectory(SubDir.FullName, Path.Combine(PasDirInfo.FullName, SubDir.Name), True)
                     Next
 
                     MessageBox.Show("Copied & Pasted Repos Folder!" & vbNewLine & "LET'S GO TO THE GIT AND PUSH THE REPOSITORY!",
     Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    If Rini("AutoExitEnabled") = "True" Then Application.Exit()
-                Else
+                If Rini("AutoExitEnabled") = "True" Then Application.Exit()
+
+            Else
                     MessageBox.Show("Error - You should select Folder Path!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
 
@@ -422,5 +452,13 @@ Public Class MainProject
         Else
             MessageBox.Show("You have to select Workspace Folder first!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+    End Sub
+
+    Private Sub WeRCheckBox_MouseHover(sender As Object, e As EventArgs) Handles WeRCheckBox.MouseHover
+        WeRLabel.Visible = True
+    End Sub
+
+    Private Sub WeRCheckBox_MouseLeave(sender As Object, e As EventArgs) Handles WeRCheckBox.MouseLeave
+        WeRLabel.Visible = False
     End Sub
 End Class
