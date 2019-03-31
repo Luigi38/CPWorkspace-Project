@@ -336,9 +336,11 @@ Public Class MainProject
                                 If Not GetFiles.FullName.Contains(".git") Then
                                     If Not GetFiles.Name = "README.md" Then
                                         If Not GetFiles.Name = ".gitattributes" Then
-                                            If Not GetFiles.Name = ".gitignore" Then File.Delete(GetFiles.FullName)
+                                            If Not GetFiles.Name.Contains(".sln") Then
+                                                If Not GetFiles.Name = ".gitignore" Then File.Delete(GetFiles.FullName)
+                                            End If
                                         End If
-                                        End If
+                                    End If
                                     End If
                             End If
                         End If
@@ -466,5 +468,9 @@ Public Class MainProject
 
     Private Sub WeRCheckBox_MouseLeave(sender As Object, e As EventArgs) Handles WeRCheckBox.MouseLeave
         WeRLabel.Visible = False
+    End Sub
+
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+
     End Sub
 End Class

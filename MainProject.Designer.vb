@@ -53,6 +53,7 @@ Partial Class MainProject
         Me.DelDirButton = New System.Windows.Forms.Button()
         Me.WeRCheckBox = New System.Windows.Forms.CheckBox()
         Me.WeRLabel = New System.Windows.Forms.Label()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         CType(Me.CPW_Icon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -351,6 +352,9 @@ Partial Class MainProject
     "y."
         Me.WeRLabel.Visible = False
         '
+        'BackgroundWorker1
+        '
+        '
         'MainProject
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -423,4 +427,5 @@ Partial Class MainProject
     Friend WithEvents DelDirButton As Button
     Friend WithEvents WeRCheckBox As CheckBox
     Friend WithEvents WeRLabel As Label
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class
