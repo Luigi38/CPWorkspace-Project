@@ -22,4 +22,4 @@ My All Programs use .NET Framework 4.6.2!
 They have the comments each Code. So, You can know about Codes easily! :D
 
 #### DEVELOPING PROJECTS make someone convenient.
-#### By 2019-02-02 & 최에릭 (MineEric64)
+#### By MineEric64 (최에릭) on 07/27/19
