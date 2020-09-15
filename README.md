@@ -2,6 +2,7 @@
 
 ![CPWorkspace_Icon](https://github.com/MineEric64/CPWorkspace-Project/blob/master/Resources/CPWorkspace_V2.png)
 ### Copy &amp; Convinient Push Program "CPWorkspace" for Git.
+# Project Closed
 
 ### Made By 'MineEric64'. (최에릭)
 
